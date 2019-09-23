@@ -5,6 +5,7 @@ import './App.css';
 /// Hey Look! -- an SFC component that holds state via useState hook
 const App = () => {
   // getters and setters for storing state with use state
+  //
   const [firstDieResult, setFirstDieResult] = useState(1);
   const [secondDieResult, setSecondDieResult] = useState(6);
 
