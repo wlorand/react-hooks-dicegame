@@ -1,28 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'; // simply import useState if React 16.8
 
 import './App.css';
 
 /// Hey Look! -- an SFC component that holds state via useState hook
 const App = () => {
   // getters and setters for storing state with use state
-  //
-  const [firstDieResult, setFirstDieResult] = useState(1);
-  const [secondDieResult, setSecondDieResult] = useState(6);
+  // recall you typically pass in the state prop and a method to update it
+  const [firstDieResult, setFirstDie] = useState(2); // initialState
+  const [secondDieResult, setSecondDie] = useState(3);
 
-  // Dice Image .png
-  const firstDieImage = require('./assets/1.png');
-  const secondDieImage = require('./assets/2.png');
+  // dice.png -- set dynamically w/template literal to see the dice change
+  const firstDieImage = require(`./assets/${firstDieResult}.png`);
+  const secondDieImage = require(`./assets/${secondDieResult}.png`);
 
   /*
    * Roll the Dice *
    */
   const rollDice = () => {
-    // use Math.random to roll the dice && store the result in state
-    setFirstDieResult(Math.floor(Math.random() * 6) + 1);
-    setSecondDieResult(Math.floor(Math.random() * 6) + 1);
+    // use Math.random to roll the dice
+    // && store the result in local state
+    setFirstDie(Math.floor(Math.random() * 6) + 1);
+    setSecondDie(Math.floor(Math.random() * 6) + 1);
+    // update the images with setDieImages -- use `` for interpolate
   };
 
-  // The Secret: React Components just render out the current State
   return (
     <div className="App">
       <header className="App-header">
