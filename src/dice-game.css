@@ -1,0 +1,23 @@
+.dice-game {
+  text-align: center;
+}
+
+.dice-game-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.dice-game-die {
+  margin: 0 10px;
+}
+
+.dice-game-controls {
+  margin-top: 20px;
+  text-align: center;
+}
